@@ -2,11 +2,12 @@ document.getElementById("formTask").addEventListener("submit", saveTask);
 
 function saveTask(e) {
   let title = document.getElementById("title").value;
-  let descripcion = document.getElementById("descripcion").value;
+  let description = document.getElementById("description").value;
+  console.log(description);
 
-  const task = {
+  let task = {
     title,
-    descripcion,
+    description,
   };
 
   if (localStorage.getItem("tasks") === null) {
@@ -48,7 +49,7 @@ function getTasks() {
     tasksView.innerHTML += `<div class="card mb-3">
         <div class="card-body">
           <p>${title} - ${description}
-          <a href="#" onclick="deleteTask('${title}')" class="btn btn-danger ml-5"> Delete</a>
+          <a href="#" onclick="deleteTask('${title}')" class="btn btn-danger ml-5"> Borrar </a>
           </p>
         </div>
       </div>`;
